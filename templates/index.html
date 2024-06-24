@@ -1,0 +1,26 @@
+<!doctype html>
+
+<head>
+    <title> Front Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles.css')}}">
+</head>
+
+<h1>THIS IS ROOT PAGE</h1>
+
+<body class="main">
+    <p>Hello</p>
+<div>
+    <p>Enter Name:</p>
+    <form class="pure-form" method="post" action="/">
+        Name:<br>
+        <input type="text" name="username"><br>
+        <button type="submit" class="pure-button pure-button-primary" value="submit">Submit</button>
+    </form>
+</div>
+<div>
+    {% if name %}
+    <p>Welcome {{name}}</p>
+    {% endif %}
+</div>
+</body>

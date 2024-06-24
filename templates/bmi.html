@@ -1,0 +1,27 @@
+<!doctype html>
+
+<head>
+    <title> BMI Calculator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles.css')}}">
+</head>
+
+<h1>BMI Calculator Page</h1>
+
+<body class="main">
+<div>
+    <p>Enter Weight in Kilgrams and Height in Meters:</p>
+    <form class="pure-form" method="post" action="/bmi">
+        Weight:<br>
+        <input type="text" name="weight"><br>
+        Height:<br>
+        <input type="text" name="height"><br>
+        <button type="submit" class="pure-button pure-button-primary" value="submit">Submit</button>
+    </form>
+</div>
+<div>
+    {% if bmicalc %}
+    <p>Total Body Mass Index is {{bmicalc}}</p>
+    {% endif %}
+</div>
+</body>
